@@ -21,8 +21,12 @@ function App() {
       <Container maxWidth="sm">
         <div className="middle" style={{ backgroundColor: '#000000', height: '100vh', opacity: 0.5 }} >
           <SearchBar />
-          <Typography className="location" color="primary" variant="h5">Bellapitiya, Sri Lanka</Typography>
-          <Typography className="date" color="primary" variant="h5">{date}</Typography>
+          <Typography className="location" variant="h4">Bellapitiya, Sri Lanka</Typography>
+          <Typography className="date" variant="h5">{date}</Typography>
+          <div className="weather-box">
+            <Typography className="temp">37C</Typography>
+            <Typography className="weather">Sunny</Typography>
+          </div>
         </div> 
       </Container>
     </div>
