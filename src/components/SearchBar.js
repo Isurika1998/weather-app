@@ -16,7 +16,10 @@ const useStyles = makeStyles((theme) => ({
     outline: 'none',
     borderRadius: '0px 0px 20px 20px', 
     fontSize: '25px',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    "&:focus": {
+      outline: 'none',
+  }
   },
 
 }));
@@ -31,7 +34,6 @@ export default function BasicTextFields() {
 
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
-
   const search = evt => {
     if (evt.key === "Enter") {
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
@@ -46,6 +48,7 @@ export default function BasicTextFields() {
 
   let date = String(new window.Date());
   date = date.slice(3,15);
+  //await fetch('http://openweathermap.org/img/w/' + iconName + '.png')
 
   return (
     <div>
@@ -65,7 +68,8 @@ export default function BasicTextFields() {
         <Typography className="date" variant="h5">{date}</Typography>
         <div className="weather-box">
           <Typography className="temp">{Math.round(weather.main.temp)} °C</Typography>
-          <Typography className="weather">Sunny</Typography>
+          <Typography className="weather">{weather.weather[0].description}</Typography>
+          <div className="weather-icon"><img id="wicon" src={'http://openweathermap.org/img/wn/'+weather.weather[0].icon+'@2x.png'} alt="Weather icon" /></div>
         </div>
       </div>
     ) : ('')}
