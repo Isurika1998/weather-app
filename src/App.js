@@ -13,7 +13,7 @@ function App() {
   
 
   return (
-    <div className="app">
+    <div className="cold">
       <TopNav />
       <Container maxWidth="sm">
         <div className="middle" style={{ backgroundColor: '#000000', height: '100vh', opacity: 0.5 }} >

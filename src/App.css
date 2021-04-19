@@ -11,6 +11,13 @@
   transition: 0.4s ease-out;
 }
 
+.cold {
+  background-image: url('./assets/Background-snow.jpg');
+  background-size: 100% 100%;
+  background-position: bottom;
+  transition: 0.4s ease-out;
+}
+
 .location {
   color: white;
   font-size: 32px;
