@@ -1,7 +1,7 @@
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import Typography from '@material-ui/core/Typography';
-import React, { useState } from 'react';
+import WeatherContent from './WeatherContent';
 
 const useStyles = makeStyles((theme) => ({
   search: {
@@ -46,10 +46,6 @@ export default function BasicTextFields() {
     }
   }
 
-  let date = String(new window.Date());
-  date = date.slice(3,15);
-  //await fetch('http://openweathermap.org/img/w/' + iconName + '.png')
-
   return (
     <div>
       <div className={classes.search}>
@@ -62,17 +58,7 @@ export default function BasicTextFields() {
         onKeyPress={search}
       />
     </div>
-    {(typeof weather.main != "undefined") ? (
-      <div>
-        <Typography className="location" variant="h4">{weather.name}, {weather.sys.country}</Typography>
-        <Typography className="date" variant="h5">{date}</Typography>
-        <div className="weather-box">
-          <Typography className="temp">{Math.round(weather.main.temp)} °C</Typography>
-          <Typography className="weather">{weather.weather[0].description}</Typography>
-          <div className="weather-icon"><img id="wicon" src={'http://openweathermap.org/img/wn/'+weather.weather[0].icon+'@2x.png'} alt="Weather icon" /></div>
-        </div>
-      </div>
-    ) : ('')}
+    <WeatherContent weatherInfo={weather} />
   </div>
   );
 }
