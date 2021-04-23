@@ -47,7 +47,7 @@ export default function BasicTextFields() {
   }
 
   return (
-    <div>
+    <React.Fragment>
       <div className={classes.search}>
       <TextField
         className={classes.searchField}
@@ -59,6 +59,6 @@ export default function BasicTextFields() {
       />
     </div>
     <WeatherContent weatherInfo={weather} />
-  </div>
+  </React.Fragment>
   );
 }

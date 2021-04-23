@@ -9,7 +9,7 @@ export default function WeatherContent(props) {
   //await fetch('http://openweathermap.org/img/w/' + iconName + '.png')
 
   return (
-    <div>
+    <React.Fragment>
     {(typeof props.weatherInfo.main != "undefined") ? (
       <div>
         <Typography className="location" variant="h4">{props.weatherInfo.name}, {props.weatherInfo.sys.country}</Typography>
@@ -21,6 +21,6 @@ export default function WeatherContent(props) {
         </div>
       </div>
     ) : ('')}
-  </div>
+  </React.Fragment>
   );
 }
