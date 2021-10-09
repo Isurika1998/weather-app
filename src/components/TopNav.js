@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import CloudSharpIcon from '@material-ui/icons/CloudSharp';
 import MenuIcon from '@material-ui/icons/Menu';
+import weathericon from '../assets/weathericon.gif';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  topbar:{
+    alignItems: 'Center',
+  },
 }));
 
 export default function ButtonAppBar() {
@@ -30,11 +34,11 @@ export default function ButtonAppBar() {
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.header}>
-        <Toolbar>
-        <IconButton color="inherit" aria-label="menu">
-            <CloudSharpIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
+        <Toolbar className={classes.topbar}>
+        <IconButton color="inherit" aria-label="menu" margin="0" padding="0">            
+            <img src={weathericon} style={{width:'10%'}}></img>
+        </IconButton>
+          <Typography variant="h6" className={classes.title} alignItems="center">
             WeatherApp
           </Typography>
           <IconButton className={classes.menuButton} color="inherit" aria-label="menu">
