@@ -12,7 +12,7 @@
 }
 
 .cold {
-  background-image: url('./assets/Background-snow.jpg');
+  background-image: url('https://source.unsplash.com/1600x900/?nature,water');
   background-size: 100% 100%;
   background-position: bottom;
   transition: 0.4s ease-out;
