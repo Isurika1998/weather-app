@@ -4,9 +4,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import CloudSharpIcon from '@material-ui/icons/CloudSharp';
-import MenuIcon from '@material-ui/icons/Menu';
 import weathericon from '../assets/weathericon.gif';
+import AboutPopover from './About';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,6 +29,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ButtonAppBar() {
   const classes = useStyles();
+  // const [anchorEl, setAnchorEl] = React.useState(null);
+
+  // const handlePopoverOpen = (event) => {
+
+  // };
+
+  // const handlePopoverClose = () => {
+  //   setAnchorEl(null);
+  // };
 
   return (
     <div className={classes.root}>
@@ -41,8 +49,8 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title} alignItems="center">
             WeatherApp
           </Typography>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
+          <IconButton className={classes.menuButton} color="inherit" aria-label="menu" >            
+            <AboutPopover/>
           </IconButton>
         </Toolbar>
       </AppBar>
