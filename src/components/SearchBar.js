@@ -12,9 +12,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#ffffff',
     opacity: 0.7,
     marginTop: "2%",
+    width:'100%',
     border: 'none',
     outline: 'none',
-    borderRadius: '0px 0px 20px 20px', 
+    borderRadius: '20px 20px 20px 20px', 
     fontSize: '25px',
     fontWeight: 'bold',
     "&:focus": {
